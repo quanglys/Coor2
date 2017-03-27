@@ -10,8 +10,6 @@ def createParse():
     parser.add_argument('-h2', dest='h2', type=int, default=1)
     parser.add_argument('-h3', dest='h3', type=int, default=1)
     parser.add_argument('-IP_SERVER', dest = 'IP_SERVER', type=str, default='localhost')
-    parser.add_argument('-PORT_NODE', dest='PORT_NODE', type=int, default=7049)
-    parser.add_argument('-PORT_USER', dest='PORT_USER', type=int, default=7012)
     parser.add_argument('-MAX_NUMBER_NODE', dest='MAX_NUMBER_NODE', type=int, default=50)
     parser.add_argument('-NUM_MONITOR', dest='NUM_MONITOR', type=int, default=120)
     parser.add_argument('-TIME_CAL_NETWORK', dest='TIME_CAL_NETWORK', type=float, default=3.0)
