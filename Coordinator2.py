@@ -41,7 +41,7 @@ lstName = []
 
 bUserConnect = False
 
-IP_SERVER  = 'localhost'
+IP_SERVER  = None
 PORT_NODE = 9407
 PORT_USER = 7021
 MAX_NUMBER_NODE = 50
@@ -169,7 +169,9 @@ def readConfig(fName=''):
     h1 = arg.h1
     h2 = arg.h2
     h3 = arg.h3
-    IP_SERVER = socket.gethostname()
+    IP_SERVER = arg.IP_SERVER
+    if (IP_SERVER == None):
+        IP_SERVER = socket.gethostname()
     MAX_NUMBER_NODE = arg.MAX_NUMBER_NODE
     FILE_MON_NET = 'data/NetWorkLoad_' + ext + '.dat'
     FILE_MON_TOP = 'data/Top_' + ext + '.dat'
@@ -254,7 +256,7 @@ def sendBoundTo(pos : int):
     if (pos < 0):
         return
 
-    if (pos >= currentK - 1):
+    if (pos > currentK - 1):
         return
 
     if (topK[pos] == 0):
