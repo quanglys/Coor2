@@ -487,7 +487,8 @@ def updateArg(arg):
             if (currentK > newK):
                 currentK = newK
             sendBoundTo(k - 1)
-            sendOneSock(-1, valueKP1, tmpSock)
+            if (tmpSock != None):
+                sendOneSock(-1, valueKP1, tmpSock)
         elif (newK > k):
             lockTop.acquire()
             valueKP1 = 0
